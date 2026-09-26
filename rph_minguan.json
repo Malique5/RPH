@@ -1,0 +1,269 @@
+[
+  {
+    "id": "m20-1",
+    "tarikh": "2026-06-21",
+    "hari": "Ahad",
+    "masa": "9.40 - 10.20",
+    "tingkatan": "4 IR",
+    "subjek": "Matematik",
+    "tajuk": "6.1 Ketaksamaan Linear dalam Dua Pemboleh Ubah",
+    "standardPembelajaran": "6.1.3 Menentukan dan melorek rantau yang memuaskan satu ketaksamaan linear.",
+    "pak21Strategy": "Pembelajaran Berasaskan Masalah (PBL)",
+    "gayaAktiviti": "Perbincangan Kumpulan & Pembentangan Murid",
+    "tempohMasa": "40 Minit",
+    "arasMurid": "Sederhana & Pelbagai",
+    "catatanTambahan": "Kad Senario Bajet, Kertas Graf Mahjong",
+    "refleksi": {
+      "menguasai": 21,
+      "jumlah": 24,
+      "tidakMenguasai": 0,
+      "catatanKhas": "Murid mencapai TP 3 dalam PBD"
+    },
+    "generated": {
+      "objektif_pembelajaran": [
+        "Menganalisis senario perniagaan untuk membina sistem ketaksamaan linear yang tepat.",
+        "Melukis garis sempadan dan melorek rantau penyelesaian pada kertas graf dengan betul."
+      ],
+      "kriteria_kejayaan": [
+        "Menterjemah sekurang-kurangnya 2 kekangan situasi harian ke dalam bentuk algebra.",
+        "Melorek rantau bertindih bagi sistem ketaksamaan dengan tepat."
+      ],
+      "set_induksi": [
+        "Guru memaparkan senario dilema peniaga kantin yang mempunyai peruntukan modal RM200 untuk membeli epal dan oren.",
+        "Murid diminta menyumbang idea awal di papan putih tentang kombinasi buah yang boleh dibeli.",
+        "Guru mengaitkan senario ini dengan konsep batas penyelesaian dalam bentuk rantau ketaksamaan linear."
+      ],
+      "perkembangan": [
+        "Murid dibahagikan kepada kumpulan PBL dan menerima Kad Senario Kekangan Kewangan yang berbeza.",
+        "Setiap kumpulan merangka 2 persamaan/ketaksamaan linear berdasarkan maklumat kad senario.",
+        "Murid memplotkan garis sempadan padu dan sempang pada Kertas Graf Mahjong secara berpasukan.",
+        "Kumpulan menguji titik asalan (0,0) untuk mengesahkan kawasan lorekan bagi setiap ketaksamaan."
+      ],
+      "pengukuhan": [
+        "Wakil setiap kumpulan membentangkan hasil lorekan rantau dan menjawab soalan daripada kumpulan lawan.",
+        "Guru memberikan maklum balas perbandingan jawapan dan membetulkan kesilapan umum berkaitan garis sempang."
+      ],
+      "penutup": [
+        "Murid melengkapkan lembaran penilaian kendiri mengenai cara menyemak rantau lorekan.",
+        "Guru membuat rumusan bagaimana ketaksamaan linear digunakan dalam pengurusan risiko kewangan."
+      ],
+      "bahan_bantu_belajar": [
+        "Kad Senario Bajet",
+        "Kertas Graf Mahjong",
+        "Marker Pen"
+      ],
+      "elemen_merentas_kurikulum": [
+        "Keusahawanan",
+        "Sains dan Teknologi"
+      ],
+      "nilai_murni_kbat": [
+        "Menganalisis",
+        "Kerjasama"
+      ],
+      "pentaksiran_pbd": [
+        "Pembentangan Hasil Kumpulan",
+        "Semakan Hasil Kerja Graf"
+      ]
+    }
+  },
+  {
+    "id": "m20-2",
+    "tarikh": "2026-06-21",
+    "hari": "Ahad",
+    "masa": "10.40 - 11.20",
+    "tingkatan": "5 IY",
+    "subjek": "Matematik",
+    "tajuk": "7.1 Serakan Data Terkumpul",
+    "standardPembelajaran": "7.1.2 Membanding dan mentafsir serakan dua atau lebih set data terkumpul berdasarkan histogram dan poligon kekerapan.",
+    "pak21Strategy": "Gallery Walk (Jalan Galeri & Stesen)",
+    "gayaAktiviti": "Aktiviti Pembelajaran Berstesen & Kad Tugasan",
+    "tempohMasa": "40 Minit",
+    "arasMurid": "Sederhana & Pelbagai",
+    "catatanTambahan": "Stesen A-D (Poster Histogram), Nota Pelekat (Sticky Notes)",
+    "refleksi": {
+      "menguasai": 13,
+      "jumlah": 19,
+      "tidakMenguasai": 0,
+      "catatanKhas": "Murid mencapai TP 3 dalam PBD"
+    },
+    "generated": {
+      "objektif_pembelajaran": [
+        "Membandingkan bentuk taburan serakan data antara dua histogram berbeza dengan betul.",
+        "Mentafsir nilai min dan sisihan piawai secara kualitatif berdasarkan taburan data."
+      ],
+      "kriteria_kejayaan": [
+        "Mengenal pasti taburan pencong kanan, pencong kiri dan simetri di setiap stesen.",
+        "Menulis sekurang-kurangnya 2 ulasan tafsiran serakan data pada nota pelekat."
+      ],
+      "set_induksi": [
+        "Guru menunjukkan dua bentuk graf taburan markah ujian dua kelas berbeza pada skrin digital.",
+        "Murid membuat undian awal kelas manakah yang mempunyai prestasi lebih konsisten.",
+        "Guru memperkenalkan aktiviti Gallery Walk untuk menganalisis 4 Stesen Data Taburan."
+      ],
+      "perkembangan": [
+        "Murid bergerak dalam kumpulan mengikut giliran ke Stesen 1 (Histogram Pencong), Stesen 2 (Poligon Kekerapan), Stesen 3 (Sisihan Piawai), dan Stesen 4 (Taburan Simetri).",
+        "Di setiap stesen, kumpulan menganalisis kad tugasan dan mencatat perbandingan nilai min serta julat antara kuartil.",
+        "Murid menampal nota pelekat yang mengandungi dapatan tafsiran kumpulan pada papan galeri stesen."
+      ],
+      "pengukuhan": [
+        "Aktiviti Gallery Walk berjalan: Murid mengelilingi stesen lain untuk membaca nota pelekat rakan dan memberikan markah \"Like\" atau soalan tambahan.",
+        "Guru bergerak sebagai fasilitator untuk membimbing tafsiran murid yang keliru tentang sisihan piawai."
+      ],
+      "penutup": [
+        "Setiap kumpulan membuat refleksi pantas (Exit Ticket) menyenaraikan ciri utama histogram pencong.",
+        "Guru merumuskan aplikasi serakan data dalam analisis sukan dan kualiti kilang."
+      ],
+      "bahan_bantu_belajar": [
+        "Poster Stesen A-D",
+        "Nota Pelekat",
+        "Kad Tugasan Stesen"
+      ],
+      "elemen_merentas_kurikulum": [
+        "Kelestarian Global"
+      ],
+      "nilai_murni_kbat": [
+        "Menganalisis",
+        "Sifat Ingin Tahu"
+      ],
+      "pentaksiran_pbd": [
+        "Maklum Balas Nota Pelekat Gallery Walk"
+      ]
+    }
+  },
+  {
+    "id": "m20-3",
+    "tarikh": "2026-06-21",
+    "hari": "Ahad",
+    "masa": "12.40 - 1.20",
+    "tingkatan": "3 IB",
+    "subjek": "Matematik",
+    "tajuk": "6.2 Sisi Empat Kitaran",
+    "standardPembelajaran": "6.2.2 Membuat dan menentusahkan konjektur tentang hubungan antara sudut-sudut pada sisi empat kitaran.",
+    "pak21Strategy": "Gamifikasi & Stesen Kuiz Interaktif",
+    "gayaAktiviti": "Pertandingan Kumpulan & Skor Papan Markah",
+    "tempohMasa": "40 Minit",
+    "arasMurid": "Sederhana & Pelbagai",
+    "catatanTambahan": "Kad Cabaran Sudut, Papan Skor Kumpulan",
+    "refleksi": {
+      "menguasai": 12,
+      "jumlah": 26,
+      "tidakMenguasai": 0,
+      "catatanKhas": "Murid mencapai TP 3 dalam PBD"
+    },
+    "generated": {
+      "objektif_pembelajaran": [
+        "Menghitung nilai sudut bertentangan yang tidak diketahui dalam sisi empat kitaran dengan tepat.",
+        "Menjelaskan hubungan sudut luaran dan sudut pedalaman bertentangan melalui cabaran kuiz."
+      ],
+      "kriteria_kejayaan": [
+        "Menggunakan rumus hasil tambah sudut bertentangan = 180° untuk menyelesaikan 3 pusingan cabaran.",
+        "Mencapai sekurang-kurangnya 80% markah ketepatan dalam Kad Cabaran Sudut."
+      ],
+      "set_induksi": [
+        "Guru melancarkan pusingan \"Roda Kejutan Sudut\" di papan putih.",
+        "Seorang wakil murid memutar roda untuk memilih soalan pantas sudut bulatan.",
+        "Guru mengumumkan cabaran gamifikasi \"Misi Pemburu Sudut Sisi Empat Kitaran\"."
+      ],
+      "perkembangan": [
+        "Kelas dibahagikan kepada 5 pasukan \"Math Warriors\". Setiap pasukan mendapat Papan Skor dan Kad Cabaran Pusingan 1, 2, dan 3.",
+        "Pusingan 1 (Speed Run): Pasukan menyelesaikan 3 soalan pantas nilai sudut bertentangan (a + c = 180°). Pasukan terawal mendapat markah bonus.",
+        "Pusingan 2 (Boss Stage): Pasukan menyelesaikan soalan KBAT yang menggabungkan sudut luaran dan tangen bulatan.",
+        "Ketua pasukan menyemak jawapan bersama \"Stesen Semakan Guru\" untuk mengumpul mata kad."
+      ],
+      "pengukuhan": [
+        "Pusingan Penalti: Pasukan yang memerlukan bantuan diberikan soalan bimbingan khas dengan bayangan hint daripada guru.",
+        "Pasukan yang mengumpul skor tertinggi diumumkan sebagai pemenang sesi ini."
+      ],
+      "penutup": [
+        "Guru mengadakan sesi \"Lampu Hijau Lampu Merah\" di mana murid mengangkat kad hijau (faham) atau kad merah (perlu bimbingan).",
+        "Murid merumuskan sifat sudut bertentangan (180°) dalam satu ayat ringkas."
+      ],
+      "bahan_bantu_belajar": [
+        "Kad Cabaran Sudut",
+        "Papan Skor Kumpulan",
+        "Kad Respons H/M"
+      ],
+      "elemen_merentas_kurikulum": [
+        "Sains & Teknologi"
+      ],
+      "nilai_murni_kbat": [
+        "Ketelitian",
+        "Semangat Bermasyarakat"
+      ],
+      "pentaksiran_pbd": [
+        "Skor Kad Cabaran Gamifikasi"
+      ]
+    }
+  },
+  {
+    "id": "m20-1790445290938",
+    "tarikh": "2026-06-21",
+    "hari": "Ahad",
+    "masa": "9.40 - 10.20",
+    "tingkatan": "4 IR",
+    "subjek": "Matematik",
+    "tajuk": "6.1 Ketaksamaan Linear dalam Dua Pemboleh Ubah",
+    "standardPembelajaran": "6.1.3 Menentukan dan melorek rantau yang memuaskan satu ketaksamaan linear.",
+    "pak21Strategy": "Pembelajaran Berasaskan Masalah (PBL)",
+    "gayaAktiviti": "Perbincangan Kumpulan & Pembentangan Murid",
+    "tempohMasa": "40 Minit",
+    "arasMurid": "Sederhana & Pelbagai",
+    "catatanTambahan": "Papan Putih, Pen Penanda (Marker), Buku Teks, Lembaran Latihan",
+    "refleksi": {
+      "menguasai": 21,
+      "jumlah": 24,
+      "tidakMenguasai": 0,
+      "catatanKhas": "Murid mencapai TP 3 dalam PBD"
+    },
+    "generated": {
+      "objektif_pembelajaran": [
+        "Menentukan kedudukan rantau yang memuaskan ketaksamaan linear melalui ujian titik atau kedudukan y terhadap garis lurus.",
+        "Melorek rantau yang memuaskan ketaksamaan linear y > mx + c, y < mx + c, y ≥ mx + c dan y ≤ mx + c dengan menggunakan jenis garis (padu atau sempang) yang betul."
+      ],
+      "kriteria_kejayaan": [
+        "Membezakan penggunaan garis padu dan garis sempang berdasarkan simbol ketaksamaan dengan tepat.",
+        "Melorek sekurang-kurangnya 3 daripada 4 rantau ketaksamaan linear yang diberikan dalam lembaran kerja dengan betul.",
+        "Mengesahkan rantau yang dilorek dengan memilih satu titik ujian yang berada dalam rantau tersebut."
+      ],
+      "set_induksi": [
+        "Guru memulakan kelas dengan menunjukkan sebuah pelan kawasan parkir berpagar (garis padu) dan kawasan larangan yang hanya ditandakan dengan garisan cat (garis sempang).",
+        "Guru mengajukan soalan rangsangan: 'Apakah perbezaan dari segi akses jika pagar itu kukuh berbanding garisan cat sahaja?'",
+        "Guru mengaitkan konsep sempadan fizikal tersebut dengan simbol ketaksamaan linear (≥, ≤ vs >, <) dalam Matematik."
+      ],
+      "perkembangan": [
+        "Guru membahagikan murid kepada kumpulan kecil dan memberikan masalah 'Zon Pembangunan Bandar' di mana murid perlu menentukan kawasan yang dibenarkan untuk membina taman permainan berdasarkan fungsi linear tertentu.",
+        "Murid berbincang dalam kumpulan untuk mengenal pasti sama ada garis yang perlu dilukis adalah garis padu atau garis sempang berdasarkan syarat 'lebih daripada' atau 'sekurang-kurangnya'.",
+        "Setiap kumpulan melukis garis lurus pada papan putih kecil/kertas sebak dan melakukan 'ujian titik' (0,0) untuk menentukan arah lorekan yang tepat.",
+        "Guru bergerak dari satu kumpulan ke kumpulan lain sebagai fasilitator untuk membetulkan kesilapan teknikal dalam pemilihan rantau (atas atau bawah garis)."
+      ],
+      "pengukuhan": [
+        "Aktiviti Pembentangan: Setiap kumpulan membentangkan hasil lorekan mereka di hadapan kelas.",
+        "Kumpulan lain bertindak sebagai 'pemerhati kritikal' yang akan menguji ketepatan lorekan rakan mereka dengan memberikan satu koordinat rawak untuk disemak kebenarannya dalam ketaksamaan tersebut.",
+        "Guru memberikan maklum balas serta-merta terhadap teknik melorek dan penggunaan jenis garis yang dibentangkan."
+      ],
+      "penutup": [
+        "Guru merumuskan pembelajaran dengan teknik '3-2-1': 3 perkara dipelajari (garis padu/sempang, ujian titik, lorekan), 2 perkara menarik, dan 1 soalan yang masih belum difahami.",
+        "Murid melengkapkan latihan pengukuhan dalam buku teks sebagai kerja rumah untuk pengukuhan kendiri."
+      ],
+      "bahan_bantu_belajar": [
+        "Papan putih dan pen penanda pelbagai warna",
+        "Kertas sebak atau papan putih kecil",
+        "Buku Teks Matematik Tingkatan 4",
+        "Lembaran Latihan 'Zon Pembangunan Bandar'"
+      ],
+      "elemen_merentas_kurikulum": [
+        "Kelestarian Alam Sekitar (Konteks perancangan ruang)",
+        "Nilai Murni (Kerjasama pasukan)",
+        "Sains dan Teknologi (Penggunaan koordinat)"
+      ],
+      "nilai_murni_kbat": [
+        "Nilai Murni: Ketelitian dalam melukis graf dan kerjasama dalam kumpulan.",
+        "KBAT: Menganalisis kedudukan rantau berdasarkan ketaksamaan yang diberi dan menilai ketepatan titik ujian."
+      ],
+      "pentaksiran_pbd": [
+        "Hasil kerja murid dalam melorek rantau pada lembaran latihan.",
+        "Pemerhatian guru semasa sesi perbincangan kumpulan dan pembentangan (Pentaksiran Lisan & Kendiri)."
+      ]
+    }
+  }
+]
