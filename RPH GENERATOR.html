@@ -88,6 +88,9 @@
             </div>
             
             <div class="flex items-center gap-2 flex-wrap">
+                <button onclick="openGithubModal()" class="px-3.5 py-2 text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition duration-150 border border-slate-600/50 flex items-center gap-1.5 shadow-sm">
+                    <i class="fa-brands fa-github text-amber-300"></i> <span id="githubBtnText">GitHub Storage</span>
+                </button>
                 <button onclick="openApiKeyModal()" class="px-3.5 py-2 text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl transition duration-150 border border-indigo-400/30 flex items-center gap-1.5 shadow-sm">
                     <i class="fa-solid fa-key text-amber-300"></i> <span id="apiKeyBtnText">Tetap API Key Gemini</span>
                 </button>
@@ -377,12 +380,18 @@
 
         <!-- View 2: Rekod Mingguan -->
         <div id="viewWeekly" class="hidden space-y-4">
-            <div class="flex items-center justify-between bg-white p-4 rounded-2xl border border-slate-200 shadow-sm no-print">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between bg-white p-4 rounded-2xl border border-slate-200 shadow-sm gap-3 no-print">
                 <div>
                     <h3 class="font-bold text-slate-800 text-base">Pengurusan RPH Minggu 20</h3>
                     <p class="text-xs text-slate-500">Senarai RPH pelbagai gaya aktiviti yang dikumpul bagi minggu persekolahan semasa.</p>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex gap-2 flex-wrap">
+                    <button onclick="pullFromGithub()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs rounded-xl flex items-center gap-1.5 border border-slate-300">
+                        <i class="fa-solid fa-cloud-arrow-down text-brand-600"></i> Muat dari GitHub
+                    </button>
+                    <button onclick="pushToGithub()" class="px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-sm flex items-center gap-1.5">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> Simpan ke GitHub
+                    </button>
                     <button onclick="window.print()" class="px-3.5 py-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs rounded-xl shadow-sm flex items-center gap-1.5">
                         <i class="fa-solid fa-print"></i> Cetak Rekod Mingguan
                     </button>
@@ -501,29 +510,58 @@
                 </button>
             </div>
 
-            <p class="text-xs text-slate-600">Pilih gaya pendekatan baru untuk mengubah susunan langkah PdPc ini:</p>
-
-            <div class="grid grid-cols-1 gap-2">
-                <button onclick="refineRPH('Tukar kepada pendekatan Chalk and Talk Tradisional, penerangan papan tulis berstruktur dan latihan terbimbing')" class="p-3 text-left border rounded-xl hover:bg-brand-50 hover:border-brand-300 text-xs font-semibold text-slate-700 flex items-center gap-2.5 transition">
-                    <i class="fa-solid fa-chalkboard-user text-slate-700 text-sm"></i>
-                    <span>Tukar ke Chalk & Talk (Tradisional)</span>
-                </button>
-                <button onclick="refineRPH('Tukar kepada pendekatan Gallery Walk dan Pembelajaran Berstesen')" class="p-3 text-left border rounded-xl hover:bg-brand-50 hover:border-brand-300 text-xs font-semibold text-slate-700 flex items-center gap-2.5 transition">
-                    <i class="fa-solid fa-person-walking text-indigo-500 text-sm"></i>
-                    <span>Tukar ke Stesen & Gallery Walk</span>
-                </button>
-                <button onclick="refineRPH('Tukar kepada Gamifikasi, Stesen Cabaran Kuiz dan Skor Papan Markah')" class="p-3 text-left border rounded-xl hover:bg-brand-50 hover:border-brand-300 text-xs font-semibold text-slate-700 flex items-center gap-2.5 transition">
-                    <i class="fa-solid fa-gamepad text-emerald-500 text-sm"></i>
-                    <span>Tukar ke Gamifikasi & Kuiz Stesen</span>
-                </button>
-                <button onclick="refineRPH('Tukar kepada Pembelajaran Berasaskan Masalah (PBL) dan Kes Dunia Sebenar')" class="p-3 text-left border rounded-xl hover:bg-brand-50 hover:border-brand-300 text-xs font-semibold text-slate-700 flex items-center gap-2.5 transition">
-                    <i class="fa-solid fa-puzzle-piece text-amber-500 text-sm"></i>
-                    <span>Tukar ke Pembelajaran Berasaskan Masalah (PBL)</span>
+    <!-- GitHub Storage Config Modal -->
+    <div id="githubModal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 no-print">
+        <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between border-b pb-3">
+                <h3 class="font-bold text-slate-800 text-base flex items-center gap-2">
+                    <i class="fa-brands fa-github text-slate-800 text-lg"></i> Tetapan GitHub Storage
+                </h3>
+                <button onclick="closeGithubModal()" class="text-slate-400 hover:text-slate-600 text-lg">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
 
-            <div class="pt-2 flex justify-end">
-                <button onclick="closeRefineModal()" class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-xl hover:bg-slate-200">Batal</button>
+            <p class="text-xs text-slate-600 leading-relaxed">
+                Simpan dan segerakkan rekod RPH mingguan terus ke fail <code class="bg-slate-100 text-brand-700 px-1.5 py-0.5 rounded font-mono text-[11px]">rph_weekly.json</code> dalam repositori GitHub anda.
+            </p>
+
+            <div class="space-y-3 text-xs">
+                <div>
+                    <label class="block font-semibold text-slate-700 mb-1">GitHub Personal Access Token (PAT)</label>
+                    <input type="password" id="inputGhToken" placeholder="ghp_xxxxxxxxxxxx atau github_pat_..." class="w-full text-xs rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-brand-500/50">
+                    <p class="text-[10px] text-slate-400 mt-0.5">Memerlukan skop / kebenaran <code class="font-bold">repo</code> atau <code class="font-bold">Contents: Read and Write</code>.</p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">GitHub Username</label>
+                        <input type="text" id="inputGhOwner" placeholder="Contoh: cikgunama" class="w-full text-xs rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-brand-500/50">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Nama Repositori</label>
+                        <input type="text" id="inputGhRepo" placeholder="Contoh: penjana-rph" class="w-full text-xs rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-brand-500/50">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Cawangan (Branch)</label>
+                        <input type="text" id="inputGhBranch" value="main" class="w-full text-xs rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-brand-500/50">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-slate-700 mb-1">Laluan Fail (File Path)</label>
+                        <input type="text" id="inputGhPath" value="rph_weekly.json" class="w-full text-xs rounded-xl border border-slate-300 px-3 py-2 focus:ring-2 focus:ring-brand-500/50">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-2 flex justify-between items-center">
+                <button onclick="clearGithubConfig()" class="text-xs text-rose-600 hover:text-rose-700 font-semibold">Padam Tetapan</button>
+                <div class="flex gap-2">
+                    <button onclick="closeGithubModal()" class="px-4 py-2 bg-slate-100 text-slate-700 text-xs font-bold rounded-xl hover:bg-slate-200">Batal</button>
+                    <button onclick="saveGithubConfig()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold rounded-xl shadow">Simpan & Test</button>
+                </div>
             </div>
         </div>
     </div>
@@ -704,9 +742,202 @@
             renderWeeklyList();
             renderAnalytics();
             updateApiKeyStatusUI();
+            updateGithubStatusUI();
 
             document.getElementById('tarikh').value = '2026-06-21';
         });
+
+        // UTF-8 safe Base64 helper methods
+        function utf8ToBase64(str) {
+            return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (match, p1) => {
+                return String.fromCharCode('0x' + p1);
+            }));
+        }
+
+        function base64ToUtf8(str) {
+            return decodeURIComponent(Array.prototype.map.call(atob(str), (c) => {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        }
+
+        function openGithubModal() {
+            const config = getGithubConfig();
+            document.getElementById('inputGhToken').value = config.token || '';
+            document.getElementById('inputGhOwner').value = config.owner || '';
+            document.getElementById('inputGhRepo').value = config.repo || '';
+            document.getElementById('inputGhBranch').value = config.branch || 'main';
+            document.getElementById('inputGhPath').value = config.path || 'rph_weekly.json';
+            document.getElementById('githubModal').classList.remove('hidden');
+        }
+
+        function closeGithubModal() {
+            document.getElementById('githubModal').classList.add('hidden');
+        }
+
+        function getGithubConfig() {
+            return {
+                token: localStorage.getItem('gh_token') || '',
+                owner: localStorage.getItem('gh_owner') || '',
+                repo: localStorage.getItem('gh_repo') || '',
+                branch: localStorage.getItem('gh_branch') || 'main',
+                path: localStorage.getItem('gh_path') || 'rph_weekly.json'
+            };
+        }
+
+        function saveGithubConfig() {
+            const token = document.getElementById('inputGhToken').value.trim();
+            const owner = document.getElementById('inputGhOwner').value.trim();
+            const repo = document.getElementById('inputGhRepo').value.trim();
+            const branch = document.getElementById('inputGhBranch').value.trim() || 'main';
+            const path = document.getElementById('inputGhPath').value.trim() || 'rph_weekly.json';
+
+            if (!token || !owner || !repo) {
+                showToast("Sila lengkapkan Token, Owner, dan Nama Repositori!", "error");
+                return;
+            }
+
+            localStorage.setItem('gh_token', token);
+            localStorage.setItem('gh_owner', owner);
+            localStorage.setItem('gh_repo', repo);
+            localStorage.setItem('gh_branch', branch);
+            localStorage.setItem('gh_path', path);
+
+            updateGithubStatusUI();
+            closeGithubModal();
+            showToast("Tetapan GitHub disimpan! Cuba muat/simpan data.", "success");
+        }
+
+        function clearGithubConfig() {
+            localStorage.removeItem('gh_token');
+            localStorage.removeItem('gh_owner');
+            localStorage.removeItem('gh_repo');
+            localStorage.removeItem('gh_branch');
+            localStorage.removeItem('gh_path');
+
+            updateGithubStatusUI();
+            closeGithubModal();
+            showToast("Tetapan GitHub dipadamkan.", "info");
+        }
+
+        function updateGithubStatusUI() {
+            const config = getGithubConfig();
+            const btnText = document.getElementById('githubBtnText');
+            if (btnText) {
+                if (config.token && config.owner && config.repo) {
+                    btnText.innerHTML = `GitHub Connected <i class="fa-solid fa-circle-check text-emerald-400 ml-1"></i>`;
+                } else {
+                    btnText.innerHTML = `GitHub Storage`;
+                }
+            }
+        }
+
+        async function pushToGithub() {
+            const config = getGithubConfig();
+            if (!config.token || !config.owner || !config.repo) {
+                showToast("Sila tetapkan akaun GitHub dahulu!", "error");
+                openGithubModal();
+                return;
+            }
+
+            showToast("Menyimpan ke GitHub...", "info");
+
+            try {
+                const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${config.path}`;
+                
+                // Check existing file SHA if file exists
+                let sha = null;
+                const checkRes = await fetch(`${url}?ref=${config.branch}`, {
+                    headers: {
+                        'Authorization': `Bearer ${config.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (checkRes.ok) {
+                    const existingData = await checkRes.json();
+                    sha = existingData.sha;
+                }
+
+                const jsonContent = JSON.stringify(weeklyRphList, null, 2);
+                const base64Content = utf8ToBase64(jsonContent);
+
+                const payload = {
+                    message: `Kemaskini Rekod Mingguan RPH (${new Date().toLocaleDateString('ms-MY')})`,
+                    content: base64Content,
+                    branch: config.branch
+                };
+
+                if (sha) {
+                    payload.sha = sha;
+                }
+
+                const putRes = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${config.token}`,
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/vnd.github.v3+json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!putRes.ok) {
+                    const errErr = await putRes.json().catch(() => ({}));
+                    throw new Error(errErr.message || "Gagal menyimpan ke GitHub");
+                }
+
+                showToast("Rekod RPH berjaya disimpan ke GitHub!", "success");
+            } catch (err) {
+                console.error("GitHub Push Error:", err);
+                showToast(`Ralat GitHub: ${err.message}`, "error");
+            }
+        }
+
+        async function pullFromGithub() {
+            const config = getGithubConfig();
+            if (!config.token || !config.owner || !config.repo) {
+                showToast("Sila tetapkan akaun GitHub dahulu!", "error");
+                openGithubModal();
+                return;
+            }
+
+            showToast("Memuat turun data dari GitHub...", "info");
+
+            try {
+                const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${config.path}?ref=${config.branch}`;
+                const res = await fetch(url, {
+                    headers: {
+                        'Authorization': `Bearer ${config.token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+
+                if (!res.ok) {
+                    if (res.status === 404) {
+                        throw new Error(`Fail '${config.path}' belum wujud. Sila klik 'Simpan ke GitHub' dahulu.`);
+                    }
+                    throw new Error("Gagal mengambil data dari GitHub.");
+                }
+
+                const fileData = await res.json();
+                const jsonText = base64ToUtf8(fileData.content.replace(/\n/g, ''));
+                const remoteList = JSON.parse(jsonText);
+
+                if (Array.isArray(remoteList)) {
+                    weeklyRphList = remoteList;
+                    saveWeeklyToStorage();
+                    updateWeeklyBadge();
+                    renderWeeklyList();
+                    renderAnalytics();
+                    showToast("Rekod Mingguan berjaya dimuat turun dari GitHub!", "success");
+                } else {
+                    throw new Error("Format JSON dalam fail GitHub tidak sah.");
+                }
+            } catch (err) {
+                console.error("GitHub Pull Error:", err);
+                showToast(`Ralat: ${err.message}`, "error");
+            }
+        }
 
         function openApiKeyModal() {
             const savedKey = localStorage.getItem('gemini_api_key') || '';
